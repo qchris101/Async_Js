@@ -79,25 +79,44 @@ const fakeRequestPromise = (url) => {
 
 // THE CLEANEST OPTION WITH THEN/CATCH
 // RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!
+// fakeRequestPromise('yelp.com/api/coffee/page1')
+//     .then((data) => {
+//         console.log("IT WORKED!!!!!! (page1)")
+//         console.log(data)
+//         return fakeRequestPromise('yelp.com/api/coffee/page2')
+//     })
+//     .then((data) => {
+//         console.log("IT WORKED!!!!!! (page2)")
+//         console.log(data)
+//         return fakeRequestPromise('yelp.com/api/coffee/page3')
+//     })
+//     .then((data) => {
+//         console.log("IT WORKED!!!!!! (page3)")
+//         console.log(data)
+//     })
+//     .catch((err) => {
+//         console.log("OH NO, A REQUEST FAILED!!!")
+//         console.log(err)
+//     })
+
 fakeRequestPromise('yelp.com/api/coffee/page1')
     .then((data) => {
-        console.log("IT WORKED!!!!!! (page1)")
+        console.log("It worked page1")
         console.log(data)
         return fakeRequestPromise('yelp.com/api/coffee/page2')
     })
     .then((data) => {
-        console.log("IT WORKED!!!!!! (page2)")
+        console.log("It worked page2")
         console.log(data)
         return fakeRequestPromise('yelp.com/api/coffee/page3')
     })
     .then((data) => {
-        console.log("IT WORKED!!!!!! (page3)")
+        console.log("It worked page3")
         console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffee/page4')
     })
     .catch((err) => {
-        console.log("OH NO, A REQUEST FAILED!!!")
+        console.log("OH OH ERROR, Request Failed!")
         console.log(err)
-    })
-
-
+    }) 
 
